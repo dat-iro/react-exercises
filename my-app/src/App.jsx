@@ -1,13 +1,15 @@
 import React from "react";
 import HelloWorld from "./HelloWorld";
 import Message from "./Message";
+import Welcome  from "./Welcome";
 
 function App() {
   return (
     <div>
       <HelloWorld />
       <Message /> {/* possiamo fare il render di Message direttamente all'interno del componente App, importando automaticamenete il componenete Message */}
-      <Hello /> {/* si, possiamo usare il componente Hello più volte */}
+      <HelloWorld /> {/* si, possiamo usare il componente HelloWorld più volte */}
+      <Welcome name="Matteo" />
     </div>
   );
 }
