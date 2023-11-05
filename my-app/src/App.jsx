@@ -9,7 +9,7 @@ function App() {
       <HelloWorld />
       <Message /> {/* possiamo fare il render di Message direttamente all'interno del componente App, importando automaticamenete il componenete Message */}
       <HelloWorld /> {/* si, possiamo usare il componente HelloWorld più volte */}
-      <Welcome name="Matteo" />
+      <Welcome name="Matteo" age={23} />
       <Welcome /> {/* se nessun prop name viene passato al componente Welcome otterremo undefined */}
     </div>
   );
