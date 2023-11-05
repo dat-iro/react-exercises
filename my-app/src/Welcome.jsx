@@ -1,10 +1,11 @@
 import React from "react";
+import Age from "./Age";
 
 export function Welcome({ name = "Franco", age }) { /* possiamo assegnare un valore di default a prop name */
   return (
     <div>
       <p>Welcome, <strong>{name}</strong>!</p>
-      <p>Your age is {age}</p>
+      <Age age={age} />
     </div>
   )
 }
