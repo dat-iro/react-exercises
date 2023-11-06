@@ -1,5 +1,5 @@
-import React from "react";
-import Age from "./Age";
+import { React } from "react";
+import { Age } from "./Age";
 
 export function Welcome({ name = "Franco", age }) { /* possiamo assegnare un valore di default a prop name */
   return (
