@@ -1,12 +1,10 @@
-import React from "react";
-import HelloWorld from "./HelloWorld";
+import { React } from "react";
+import { Hello } from "./Hello";
 
-function App() {
+export function App() {
   return (
     <div>
-      <HelloWorld />
+      <Hello />
     </div>
   );
 }
-
-export default App;
