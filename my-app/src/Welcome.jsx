@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 
 export function Welcome({ name = "Franco", age }) { /* possiamo assegnare un valore di default a prop name */
   return (
