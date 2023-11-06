@@ -1,7 +1,5 @@
-import React from "react";
+import { React } from "react";
 
-function Message() {
+export function Message() {
   return <p>What a beautiful day!</p>;
 }
-
-export default Message
