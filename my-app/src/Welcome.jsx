@@ -5,7 +5,11 @@ export function Welcome({ name = "Franco", age }) { /* possiamo assegnare un val
   return (
     <div>
       <p>Welcome, <strong>{name}</strong>!</p>
-      <Age age={age} />
+      {age > 18 && <Age age={age} />}
+      {age && <Age age={age} />}
+      {age > 18 && age < 65 && <Age age={age} />}
+      {age > 18 && name === "John" && <Age age={age} />}
+      {<Age age={age} />}
     </div>
   )
 }

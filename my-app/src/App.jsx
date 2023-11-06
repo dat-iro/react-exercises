@@ -11,6 +11,8 @@ export function App() {
       <Hello /> {/* si, possiamo usare il componente HelloWorld più volte */}
       <Welcome name="Matteo" age={23} />
       <Welcome age={25} /> {/* se nessun prop name viene passato al componente Welcome otterremo undefined */}
+      <Welcome name="John" age={20} />
+      <Welcome />
     </div>
   );
 }
