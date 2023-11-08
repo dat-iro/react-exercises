@@ -4,6 +4,11 @@ import { Message } from "./Message";
 import { Welcome } from "./Welcome";
 
 export function App() {
+  function handleCurrentTime() {
+    const time = new Date();
+    alert(`Current time is: ${time.toLocaleTimeString()}`)
+  }
+  
   return (
     <div>
       <Hello />
@@ -13,6 +18,7 @@ export function App() {
       <Welcome age={25} /> {/* se nessun prop name viene passato al componente Welcome otterremo undefined */}
       <Welcome name="John" age={20} />
       <Welcome />
+      <AlertClock onClick={handleCurrentTime} />
     </div>
   );
 }
