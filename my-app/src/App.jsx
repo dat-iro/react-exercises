@@ -8,7 +8,7 @@ export function App() {
     const time = new Date();
     alert(`Current time is: ${time.toLocaleTimeString()}`)
   }
-  
+
   return (
     <div>
       <Hello />
@@ -19,6 +19,7 @@ export function App() {
       <Welcome name="John" age={20} />
       <Welcome />
       <AlertClock onClick={handleCurrentTime} />
+      <Counter />
     </div>
   );
 }
