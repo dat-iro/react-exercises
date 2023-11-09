@@ -2,6 +2,9 @@ import { React } from "react";
 import { Hello } from "./Hello";
 import { Message } from "./Message";
 import { Welcome } from "./Welcome";
+import { AlertClock } from "./AlertClock";
+import { Counter } from "./Counter";
+import { Clock } from "./Clock";
 
 export function App() {
   function handleCurrentTime() {
@@ -20,6 +23,7 @@ export function App() {
       <Welcome />
       <AlertClock onClick={handleCurrentTime} />
       <Counter />
+      <Clock />
     </div>
   );
 }
