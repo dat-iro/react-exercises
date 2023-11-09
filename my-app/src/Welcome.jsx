@@ -1,6 +1,6 @@
 import { React } from "react";
 
-export function Welcome({ name = "Franco", age }) { /* possiamo assegnare un valore di default a prop name */
+export function Welcome({ name = "Franco", age }) {
   return (
     <div>
       <p>Welcome, <strong>{name}</strong>!</p>
