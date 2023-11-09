@@ -5,6 +5,7 @@ import { Welcome } from "./Welcome";
 import { AlertClock } from "./AlertClock";
 import { Counter } from "./Counter";
 import { Clock } from "./Clock";
+import { MouseClicker } from "./MouseClicker";
 
 export function App() {
   function handleCurrentTime() {
@@ -24,6 +25,7 @@ export function App() {
       <AlertClock onClick={handleCurrentTime} />
       <Counter />
       <Clock />
+      <MouseClicker />
     </div>
   );
 }
