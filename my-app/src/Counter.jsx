@@ -4,6 +4,10 @@ import { CounterDisplay } from "./CounterDisplay";
 export function Counter(initialCounter = 0, increment = 1, decrement = 1) {
   const [counter, setCounter] = useState(initialCounter)
 
+  useEffect(() => {
+    console.log(counter)
+  }, [counter])
+
   function handleCounterIncrement() {
     setCounter((c) => c + increment)
   }
