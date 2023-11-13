@@ -18,23 +18,22 @@ export function App() {
     alert(`Current time is: ${time.toLocaleTimeString()}`)
   }
 
+  function onLogin(data) {
+    console.log('Login data:', data)
+  }
+
+  const persons = [
+    { name: "Alice", key: "abc" },
+    { name: "Bob", key: "def" },
+    { name: "Charlie", key: "ghi" },
+    { name: "David", key: "jkl" },
+    { name: "Eve", key: "mno" }
+  ];
+
   return (
     <div>
       <Hello />
-      <Message /> {/* possiamo fare il render di Message direttamente all'interno del componente App, importando automaticamenete il componenete Message */}
-      <Hello /> {/* si, possiamo usare il componente HelloWorld più volte */}
-      <Welcome name="Matteo" age={23} />
-      <Welcome age={25} /> {/* se nessun prop name viene passato al componente Welcome otterremo undefined */}
-      <Welcome name="John" age={20} />
-      <Welcome />
-      <AlertClock onClick={handleCurrentTime} />
-      <Counter />
-      <Clock />
-      <MouseClicker />
-      <InteractiveWelcome />
-      <UncontrolledLogin />
-      <FirstMount />
-      <FocusableInput />
+      <Colors arr={persons}/>
     </div>
   );
 }
