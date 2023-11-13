@@ -27,6 +27,10 @@ export function Login({func}) {
       func(loginData)
   }
 
+  function handleReset() {
+    setData(initialiseData())
+  }
+
   return (
     <div>
         <input name="username" type="text" value={data.username} onChange={handleInput} />
@@ -34,6 +38,7 @@ export function Login({func}) {
         <label htmlFor="save">Remember me!</label>
         <input name="save" type="checkbox" checked={data.save} onChange={handleInput} />
         <button disabled={!data.username || !data.password} onClick={handleLogin}>Login</button>
+        <button onClick={handleReset}>Reset</button>
     </div>
   )
 }
