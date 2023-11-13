@@ -17,6 +17,10 @@ export function App() {
     alert(`Current time is: ${time.toLocaleTimeString()}`)
   }
 
+  function onLogin(data) {
+    console.log('Login data:', data)
+  }
+
   return (
     <div>
       <Hello />
