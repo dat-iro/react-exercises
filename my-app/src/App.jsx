@@ -10,6 +10,7 @@ import { InteractiveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { FocusableInput } from "./FocusableInput";
+import { FirstMount } from "./FirstMount";
 
 export function App() {
   function handleCurrentTime() {
@@ -32,6 +33,7 @@ export function App() {
       <MouseClicker />
       <InteractiveWelcome />
       <UncontrolledLogin />
+      <FirstMount />
       <FocusableInput />
     </div>
   );
