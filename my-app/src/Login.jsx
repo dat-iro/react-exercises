@@ -22,9 +22,11 @@ export function Login({func}) {
       })
   }
 
-  function handleLogin() {
-      const loginData = JSON.stringify(data);
-      func(loginData)
+  function handleLogin(event) {
+    event.preventDefault() // con preventDefault andiamo a prevenire il comportamento di default del form
+
+    const loginData = JSON.stringify(data);
+    func(loginData)
   }
 
   function handleReset() {
