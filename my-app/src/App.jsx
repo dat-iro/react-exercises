@@ -29,7 +29,7 @@ export function App() {
       <Clock />
       <MouseClicker />
       <InteractiveWelcome />
-      <Login />
+      <Login func={onLogin} />
     </div>
   );
 }
