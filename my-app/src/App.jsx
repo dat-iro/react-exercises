@@ -2,6 +2,7 @@ import { React } from "react";
 import { Hello } from "./Hello";
 import { Message } from "./Message";
 import { Welcome } from "./Welcome";
+import { AlertClock } from "./AlertClock";
 
 export function App() {
   function handleCurrentTime() {
@@ -18,7 +19,7 @@ export function App() {
       <Welcome age={25} /> {/* se nessun prop name viene passato al componente Welcome otterremo undefined */}
       <Welcome name="John" age={20} />
       <Welcome />
-      <AlertClock onClick={handleCurrentTime} />
+      <AlertClock handleOnClick={handleCurrentTime} />
     </div>
   );
 }
