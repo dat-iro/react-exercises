@@ -1,15 +1,22 @@
-
+import { useState } from "react";
 
 export function TodoList() {
   const [todos, setTodos] = useState(["Matteo"]);
+  const [newTodo, setNewTodo] = useState("");
 
   function handleAdd() {
     event.preventDefault();
 
-    const formData = new FormData(event.target)
-    const newTodo = formData.get("newTodo")
+    if(newTodo) setTodos(t => t = [...t, newTodo])
+    setNewTodo("")
+  }
 
-    if (newTodo) setTodos(t => t = [...t, newTodo])
+  function handleInput(event) {
+    setNewTodo(event.target.value)
+  }
+
+  function handleReset() {
+    setTodos([])
   }
 
   return (
@@ -18,8 +25,9 @@ export function TodoList() {
         {todos.map((todo, index) => <li key={index}>{todo}</li>)}
       </ul>
       <form onSubmit={handleAdd}>
-        <input name="newTodo" type="text" />
+        <input name="newTodo" value={newTodo} type="text" onChange={handleInput} />
         <button>Add new Todo</button>
+        <button type="reset" onClick={handleReset}>Reset</button>
       </form>
     </div>
   )
