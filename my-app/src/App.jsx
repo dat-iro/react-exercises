@@ -11,6 +11,8 @@ import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { FocusableInput } from "./FocusableInput";
 import { FirstMount } from "./FirstMount";
+import { Colors } from "./Colors";
+import { TodoList } from "./TodoList";
 
 export function App() {
   function handleCurrentTime() {
@@ -33,7 +35,8 @@ export function App() {
   return (
     <div>
       <Hello />
-      <Colors arr={persons}/>
+      <Colors arr={persons} />
+      <TodoList />
     </div>
   );
 }
