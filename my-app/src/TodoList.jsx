@@ -11,6 +11,10 @@ export function TodoList() {
     setNewTodo("")
   }
 
+  function handleRemove(i) {
+    setTodos(t => t.filter((el, index) => index != 1))
+  }
+
   function handleInput(event) {
     setNewTodo(event.target.value)
   }
@@ -22,7 +26,7 @@ export function TodoList() {
   return (
     <div>
       <ul>
-        {todos.map((todo, index) => <li key={index}>{todo}</li>)}
+        {todos.map((todo, index) => <li key={index}>{todo}<button onClick={() => handleRemove(index)}>Remove</button></li>)}
       </ul>
       <form onSubmit={handleAdd}>
         <input name="newTodo" value={newTodo} type="text" onChange={handleInput} />
