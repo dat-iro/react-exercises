@@ -35,9 +35,16 @@ export function App() {
 
   return (
     <div>
-      <Container title={"Hi!"}>
-        <Counter />
-      </Container>
+      <LanguageContext.Provider value={selectedLanguage}>
+        <div>
+          <label>Select Language</label>
+          <select value={selectedLanguage} onChange={handleLanguage}>
+            <option value="english">English</option>
+            <option value="italiano">Italiano</option>
+          </select>
+        </div>
+        <Clock />
+      </LanguageContext.Provider>
     </div>
   );
 }
