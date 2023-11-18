@@ -13,6 +13,7 @@ import { FocusableInput } from "./FocusableInput";
 import { FirstMount } from "./FirstMount";
 import { Colors } from "./Colors";
 import { TodoList } from "./TodoList";
+import { Container } from "./Container";
 
 export function App() {
   function handleCurrentTime() {
@@ -34,9 +35,9 @@ export function App() {
 
   return (
     <div>
-      <Hello />
-      <Colors arr={persons} />
-      <TodoList />
+      <Container title={"Hi!"}>
+        <Counter />
+      </Container>
     </div>
   );
 }
