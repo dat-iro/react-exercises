@@ -2,13 +2,33 @@ import { useEffect, useState } from "react";
 
 export function useGitHubUser({username}) {
   const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
+  function fetchData() {
+    setLoading(true)
+    setError(null)
+
     fetch(`https://api.github.com/users/${username}`)
-      .then((data) => data.json())
+      .then((data) => {
+        if (data.status !== 200) {
+          setError(new Error)
+          return null
+        } else {
+          return data.json()
+        }
+      })
       .then((data) => setUserData(data))
-      .catch((error) => console.log(error))
-  }, [username])
+      .catch((error) => setError(error))
+      .finally(() => setLoading(false))
+  }
 
-  return {userData}
+  useEffect(() => fetchData(), [username])
+
+  return {
+    userData,
+    loading,
+    error,
+    onFetchData: fetchData
+  }
 }
