@@ -16,22 +16,11 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 
 export function App() {
-  function handleCurrentTime() {
-    const time = new Date();
-    alert(`Current time is: ${time.toLocaleTimeString()}`)
-  }
+  const [selectedLanguage, setSelectedLanguage] = useState("english");
 
-  function onLogin(data) {
-    console.log('Login data:', data)
+  function handleLanguage(event) {
+    setSelectedLanguage(event.target.value)
   }
-
-  const persons = [
-    { name: "Alice", key: "abc" },
-    { name: "Bob", key: "def" },
-    { name: "Charlie", key: "ghi" },
-    { name: "David", key: "jkl" },
-    { name: "Eve", key: "mno" }
-  ];
 
   return (
     <div>
