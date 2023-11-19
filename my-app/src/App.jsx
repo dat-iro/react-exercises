@@ -15,6 +15,7 @@ import { Colors } from "./Colors";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { GitHubUser } from "./GitHubUser";
+import { GitHubUsers } from "./GitHubUsers";
 
 export function App() {
   const [selectedLanguage, setSelectedLanguage] = useState("english");
@@ -35,7 +36,7 @@ export function App() {
         </div>
         <Clock />
       </LanguageContext.Provider>
-      <GitHubUser username={"dat-iro"} />
+      <GitHubUsers />
     </div>
   );
 }
