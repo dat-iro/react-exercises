@@ -24,9 +24,13 @@ export function App() {
     setSelectedLanguage(event.target.value)
   }
 
+  function onLogin(data) {
+    console.log("Login data:", data)
+  }
+
   return (
     <div>
-      <Counter />
+      <GitHubUser username={"dat-iro"} />
     </div>
   );
 }

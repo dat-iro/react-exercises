@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { GitHubUser } from "./GitHubUser";
 
-
 export function GitHubUsers() {
   const [listElement, setListElement] = useState(["dat-iro"])
 
