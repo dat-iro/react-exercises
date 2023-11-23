@@ -15,6 +15,7 @@ import { Colors } from "./Colors";
 import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { GitHubUser } from "./GitHubUser";
+import { ShowGitHubUser } from "./ShowGitHubUser";
 
 export function App() {
   const [selectedLanguage, setSelectedLanguage] = useState("english");
@@ -24,18 +25,10 @@ export function App() {
   }
 
   return (
-    <div>
-      <LanguageContext.Provider value={selectedLanguage}>
-        <div>
-          <label>Select Language</label>
-          <select value={selectedLanguage} onChange={handleLanguage}>
-            <option value="english">English</option>
-            <option value="italiano">Italiano</option>
-          </select>
-        </div>
-        <Clock />
-      </LanguageContext.Provider>
-      <GitHubUser username={"dat-iro"} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="users/:username" element={<ShowGitHubUser />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
