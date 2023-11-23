@@ -5,12 +5,10 @@ import { Welcome } from "./Welcome";
 
 export function App() {
   return (
-    <div>
-      <Hello />
-      <Message /> {/* possiamo fare il render di Message direttamente all'interno del componente App, importando automaticamenete il componenete Message */}
-      <Hello /> {/* si, possiamo usare il componente HelloWorld più volte */}
-      <Welcome name="Matteo" />
-      <Welcome /> {/* se nessun prop name viene passato al componente Welcome otterremo undefined */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Welcome name="Matteo" />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
