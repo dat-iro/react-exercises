@@ -26,7 +26,12 @@ export function App() {
 
   return (
     <BrowserRouter>
+      <Link to="/">Home</Link> |
+      <Link to="/counter">Counter</Link> |
+      <Link to="users/dat-iro">dat-iro Github User</Link>
       <Routes>
+        <Route path="/" element={<Welcome name="Matteo" />} />
+        <Route path="/counter" element={<Counter />} />
         <Route path="users/:username" element={<ShowGitHubUser />} />
       </Routes>
     </BrowserRouter>
