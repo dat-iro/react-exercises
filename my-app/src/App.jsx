@@ -16,6 +16,8 @@ import { TodoList } from "./TodoList";
 import { Container } from "./Container";
 import { GitHubUser } from "./GitHubUser";
 import { ShowGitHubUser } from "./ShowGitHubUser";
+import { GitHubUserList } from "./GitHubUserList";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 export function App() {
   const [selectedLanguage, setSelectedLanguage] = useState("english");
@@ -28,10 +30,11 @@ export function App() {
     <BrowserRouter>
       <Link to="/">Home</Link> |
       <Link to="/counter">Counter</Link> |
-      <Link to="users/dat-iro">dat-iro Github User</Link>
+      <Link to="users/">Github User</Link> 
       <Routes>
         <Route path="/" element={<Welcome name="Matteo" />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/users" element={<GitHubUserList />} />
         <Route path="users/:username" element={<ShowGitHubUser />} />
         <Route path="*" element={<div>Not Found!</div>} />
       </Routes>
