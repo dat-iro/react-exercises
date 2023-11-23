@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export function GitHubUserList() {
   const [usersData, setUsersData] = useState(null);
@@ -12,8 +12,11 @@ export function GitHubUserList() {
   }, []);
 
   return (
-    <ul>
-      {usersData && usersData.map((el, key) => (<li key={key}><Link to={el.login}>{el.login}</Link></li>))}
-    </ul>
+    <>
+      <ul>
+        {usersData && usersData.map((el, key) => (<li key={key}><Link to={el.login}>{el.login}</Link></li>))}
+      </ul>
+      <Outlet />
+    </>
   );
 }
