@@ -15,10 +15,14 @@ export function useGitHubUser({ username }) {
 
   const { data, error } = useSWR("https://api.github.com/users", fetcher)
 
+  const fetchUserData = () => {
+    mutate();
+  }
+
   return {
     userData: data,
     loading: !data && !error,
     error,
-    onFetchData: mutate,
+    onFetchData: fetchUserData,
   };
 }
