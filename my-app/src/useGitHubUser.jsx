@@ -3,16 +3,13 @@ import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((response) => response.json())
 
-export function useGitHubUser() {
-  const { data, error } = useSWR("https://api.github.com/users", fetcher)
+export function useGitHubUser({ username }) {
+  const { data, error, mutate } = useSWR(`https://api.github.com/users/${username}`, fetcher);
 
-  return (
-    <ul>
-      {!data && !error && <div>Loading...</div>}
-      {error && <div>An error has occurred</div>}
-      {data.map((user) => (
-        <li key={user.id}>{user.login}</li>
-      ))}
-    </ul>
-  )
+  return {
+    userData: data,
+    loading: !data && !error,
+    error,
+    onFetchData: mutate,
+  }
 }

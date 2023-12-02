@@ -30,7 +30,7 @@ export function App() {
 
   return (
     <div>
-      <GitHubUser username={"dat-iro"} />
+      <GitHubUsers />
     </div>
   );
 }
