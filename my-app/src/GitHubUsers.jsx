@@ -8,7 +8,8 @@ export function GitHubUsers() {
     try {
       event.preventDefault();
       const formData = new FormData(event.target);
-      if (!listElement.includes(formData.get("username"))) setListElement([...listElement, formData.get("username")])
+      if (!listElement.includes(formData.get("username")))
+        setListElement([...listElement, formData.get("username")])
     } catch (error) {
       console.log(error)
     }
